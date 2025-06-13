@@ -1,0 +1,184 @@
+<div class="admin-outlet">
+  <h1 class="page-title">Admin Outlet Editor</h1>
+  
+  <div class="editor-card">
+    <div class="region-section" *ngFor="let region of getRegions(); let regionIndex = index">
+      <h2 class="region-title">{{ getRegionDisplayName(region) }}</h2>
+      
+      <div class="outlet-list">
+        <div class="outlet-item" *ngFor="let outlet of getOutletsByRegion(region); let i = index">
+         
+          <div class="outlet-header" (click)="toggleOutlet(outlet.id)">
+
+            <div class="outlet-id">{{ outlet.name || 'New Outlet' }}</div>
+
+            <div class="expand-icon" [class.expanded]="outlet.isExpanded">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"></polyline>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="outlet-form" [class.expanded]="outlet.isExpanded">
+            <div class="form-grid">
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Name</label>
+                  <input 
+                    type="text"
+                    [(ngModel)]="outlet.name"
+                    (ngModelChange)="outlet.id = generateOutletId(outlet.name)"
+                    name="name{{i}}"
+                    placeholder="Enter outlet name"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Outlet ID</label>
+                  <input 
+                    type="text"
+                    [(ngModel)]="outlet.id"
+                    name="address{{i}}"
+                    placeholder="Outlet ID"
+                    class="form-input"
+                    readonly
+                    disabled
+                    style="opacity: 0.6;"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Region</label>
+                  <input 
+                    type="text"
+                    [value]="getRegionDisplayName(outlet.region)"
+                    class="form-input"
+                    readonly
+                    disabled
+                    style="opacity: 0.6;"
+                  />
+                </div>
+              </div>
+              
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Address</label>
+                  <input 
+                    type="text"
+                    [(ngModel)]="outlet.address"
+                    name="address{{i}}"
+                    placeholder="Enter outlet address"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Image URL</label>
+                  <input 
+                    type="text"
+                    [(ngModel)]="outlet.image"
+                    name="image{{i}}"
+                    placeholder="Enter image URL"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Map URL</label>
+                  <input 
+                    type="text"
+                    [(ngModel)]="outlet.mapUrl"
+                    name="mapUrl{{i}}"
+                    placeholder="Enter embeded Google Maps URL"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+              
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Opening Hours</label>
+                  <div class="hours-container">
+                    <div class="hour-item" *ngFor="let hour of outlet.hours; let j = index">
+                      <div class="hour-row">
+                        <select 
+                          [(ngModel)]="hour.day"
+                          name="day{{i}}_{{j}}"
+                          class="day-select"
+                        >
+                          <option value="MON">Monday</option>
+                          <option value="TUE">Tuesday</option>
+                          <option value="WED">Wednesday</option>
+                          <option value="THU">Thursday</option>
+                          <option value="FRI">Friday</option>
+                          <option value="SAT">Saturday</option>
+                          <option value="SUN">Sunday</option>
+                        </select>
+                        <input 
+                          type="text"
+                          [(ngModel)]="hour.time"
+                          name="time{{i}}_{{j}}"
+                          placeholder="e.g., 5:00PM - 3:00AM"
+                          class="time-input"
+                        />
+                        <button 
+                          type="button"
+                          class="remove-hour-btn"
+                          (click)="removeHour(i, j)"
+                          *ngIf="outlet.hours.length > 1"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    </div>
+                    <button 
+                      type="button"
+                      class="add-hour-btn"
+                      (click)="addHour(i, region)"
+                    >
+                      + Add Hour
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Description</label>
+                  <textarea 
+                    [(ngModel)]="outlet.description"
+                    name="description{{i}}"
+                    placeholder="Enter outlet description"
+                    class="form-textarea"
+                    rows="6"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone</label>
+                  <input 
+                    type="text"
+                    [(ngModel)]="outlet.phone"
+                    name="phone{{i}}"
+                    placeholder="Enter phone number"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+                <div class="save-and-delete">
+                  <button class="delete-btn" (click)="deleteOutlet(outlet.id)">
+                    Delete Outlet
+                  </button>
+
+                  <button class="save-btn" (click)="saveOutlets()" [class.loading]="loading">
+                    <span class="btn-text">Save Changes</span>
+                  </button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="action-bar">
+      <button class="add-outlet-btn" (click)="addOutletToRegion(region)">
+        + Add New Outlet
+      </button>
+    </div>
+    </div>
+  </div>
+</div>

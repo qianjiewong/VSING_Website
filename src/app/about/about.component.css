@@ -1,0 +1,268 @@
+.about-wrapper {
+  background-color: white;
+  color: black;
+  padding-bottom: 100px;
+}
+
+.about-hero {
+  background-color: hsl(221, 23%, 18%);
+  color: #fff;
+  text-align: left;
+  padding: 4rem 3rem;
+}
+
+.about-hero h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #A6B2BF;
+  font-size: 15px;
+  margin-top: 50px;
+}
+
+.about-hero p {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+/* Feature Sections */
+.feature-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-feature-1 {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.about-feature-2 {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.feature-image {
+  flex: 1;
+  min-width: 0;
+}
+
+.feature-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-feature-1-content,
+.about-feature-2-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-feature-1-content h3,
+.about-feature-2-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.about-feature-1-content p,
+.about-feature-2-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.about-feature-2-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.about-feature-2-header h4 {
+  font-size: 1rem;
+  color: #395fe3;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Value Section */
+.value-section {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.value-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.value-section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: #1a1a1a;
+}
+
+.value-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.card-image {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 3rem 2rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .about-hero h2 {
+    font-size: 15px;
+  }
+
+  .about-hero p {
+    font-size: 25px;
+  }
+
+  .feature-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .about-feature-1 .feature-container {
+    flex-direction: column-reverse;
+  }
+
+  .about-feature-1,
+  .about-feature-2 {
+    padding: 3rem 0;
+  }
+
+  .about-feature-1-content h3,
+  .about-feature-2-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-feature-1-content p,
+  .about-feature-2-content p {
+    font-size: 1rem;
+  }
+
+  .about-feature-2-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .about-feature-2-header h4 {
+    margin-top: 0.5rem;
+  }
+
+  .value-section {
+    padding: 4rem 0;
+  }
+
+  .value-container {
+    padding: 0 1rem;
+  }
+
+  .value-section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .value-cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card img {
+    height: 200px;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .about-hero p {
+    font-size: 30px;
+  }
+
+  .about-feature-1-content h3,
+  .about-feature-2-content h3 {
+    font-size: 2rem;
+  }
+
+  .feature-container {
+    gap: 2rem;
+  }
+
+  .value-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+  .hero-content,
+  .feature-container,
+  .value-container {
+    max-width: 1400px;
+  }
+
+  .about-hero p {
+    font-size: 35px;
+  }
+
+  .about-feature-1-content h3,
+  .about-feature-2-content h3 {
+    font-size: 3rem;
+  }
+}

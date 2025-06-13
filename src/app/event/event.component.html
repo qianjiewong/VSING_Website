@@ -1,0 +1,32 @@
+<div class="event-detail-wrapper" *ngIf="eventData">
+  <div class="event-container">
+
+    <div>
+      <div class="event-image-section">
+        <img [src]="eventData.image" [alt]="eventData.title" class="event-image" />
+      </div>
+
+      <div class="event-content-section">
+        <h2 class="event-heading">{{ eventData.title }}</h2>
+        <p class="event-description">{{ eventData.description }}</p>
+        <div class="button-wrapper">
+          <button class="book-button">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-list-section">
+      <ul>
+        <li *ngFor="let event of events">
+          <a
+            [routerLink]="['/', region.toLowerCase(), 'event', event.id]"
+            [class.active]="event.id === eventId">
+            {{ event.title.toUpperCase().replace('-', ' ') }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+

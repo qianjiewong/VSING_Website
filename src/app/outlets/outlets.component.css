@@ -1,0 +1,359 @@
+.outlets-wrapper {
+  background-color: white;
+  color: black; 
+}
+
+.outlet-hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.outlet-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+}
+
+.hero-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-subtitle h3 {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #A6B2BF;
+  margin: 0;
+}
+
+.hero-subtitle::after {
+  content: '';
+  flex-grow: 2;
+  height: 1px;
+  background-color: #A6B2BF;
+}
+
+.hero-overlay-content h2 {
+  font-size: 80px;
+  font-weight: 700;
+  margin: 10px 0 20px;
+}
+
+.book-btn {
+  background-color: #007BFF;
+  border: none;
+  padding: 12px 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+.outlet-section {
+  padding: 2rem 3rem;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.outlet-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 50px;
+}
+
+.outlet-title span {
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 50%;
+  border: 2px solid #ABABAB; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ABABAB ;
+}
+
+.outlet-title h3 {
+  font-weight: 800;
+}
+
+.outlet-title a {
+  color: #297BFA;
+}
+
+.outlet-main {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-left: 50px;
+  flex-wrap: wrap;
+}
+
+.main-image {
+  flex: 1;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.map-embed {
+  flex: 1;
+  height: 300px;
+  border-radius: 10px;
+  border: 0;
+  width: 100%;
+}
+
+.outlet-description {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+}
+
+.main-content {
+  flex: 3;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #4C4D4D;
+}
+
+.side-info {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.side-info h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #777;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+.hours-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #333;
+  gap: 0.1rem;
+}
+
+.hours-row .day {
+  flex: 0 0 60px;
+  font-weight: 500;
+}
+
+.hours-row .time {
+  text-align: right;
+  flex: 1;
+  color: #333;
+  font-weight: 500;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 3rem;
+}
+
+.gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 50px;
+}
+
+.outlet-divider {
+  border-top: 1px solid #464B4F;
+  opacity: 0.5;
+  margin: 1rem 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.phone-icon {
+  vertical-align: middle;
+  margin-right: 8px;
+  font-size: 1.5rem;
+  color: #e11e1e;
+}
+
+@media (max-width: 768px) {
+  .outlet-hero {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .hero-overlay-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .book-btn {
+    margin-left: 0;
+  }
+
+  .outlet-section {
+    padding: 1.5rem 1rem;
+    margin: 0;
+  }
+
+  .outlet-title {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .outlet-title span {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .outlet-title h3 {
+    font-size: 1.3rem;
+  }
+
+  .outlet-main {
+    flex-direction: column;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    gap: 0;
+  }
+
+  .main-image {
+    height: 500px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+
+  .map-embed {
+    display: none;
+  }
+
+  .outlet-description {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 1rem;
+    margin-top: 0;
+  }
+
+  .main-content {
+    padding: 0;
+    order: 3; 
+  }
+
+  .side-info {
+    padding: 0;
+    order: 2; 
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-info h4,
+  .hours-info h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hours-row {
+    font-size: 0.9rem;
+  }
+
+  .outlet-book-btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 1.5rem auto;
+  }
+
+  .outlet-divider {
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-overlay-content h2 {
+    font-size: 2rem;
+  }
+
+  .outlet-hero img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    object-position: 70%;
+    display: block;
+  }
+
+  .hero-overlay-content {
+    position: absolute;
+    text-align: start;
+    bottom: 10px;
+    margin-left: 40px;
+  }
+
+  .hero-subtitle {
+    text-align: start;
+    padding: 0;
+  }
+
+  .hero-subtitle::after {
+    display: none;
+  }
+  
+  .outlet-section {
+    padding: 1rem 1.5rem;
+  }
+
+  .outlet-title span {
+    width: 10px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+
+  .outlet-title h3 {
+    font-size: 1.2rem;
+  }
+
+  .main-image {
+    height: 200px;
+  }
+
+  .hours-row {
+    font-size: 0.85rem;
+  }
+
+  .book-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+

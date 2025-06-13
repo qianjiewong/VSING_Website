@@ -1,0 +1,41 @@
+{
+  "malaysia": {
+    "name": "Malaysia",
+    "outlets": [
+      { "name": "VSING Icon City", "id": "vsing-icon-city" },
+      { "name": "VSING Ipoh Soho", "id": "vsing-ipoh-soho" },
+      { "name": "VSING Kota Damansara", "id": "vsing-kota-damansara" },
+      { "name": "VSINGX Mount Austin JB", "id": "vsing-mount-austin-jb" },
+      { "name": "VSING Cheras Traders Square", "id": "vsign-cheras-traders" },
+      { "name": "VOLTZ by VSING", "id": "vsing-voltz" },
+      { "name": "VSING Batu Pahat", "id": "vsing-batu-pahat" },
+      { "name": "觅 mi 酒馆 @Sri Petaling", "id": "mi-sri-petaling" }
+    ]
+  }, 
+  "hongkong": {
+    "name": "Hong Kong",
+    "outlets": [
+      { "name": "花椒子 Peppercorn", "id": "peppercorn" },
+      { "name": "PONGLIVE", "id": "ponglive" },
+      { "name": "VSING Prince Edward", "id": "prince-edward" },
+      { "name": "VSING KNUTSFORD V10", "id": "knutsford-v10" },
+      { "name": "Beats By VSING", "id": "beats-by-vsing" }
+    ]
+  },
+  "singapore": {
+    "name": "Singapore",
+    "outlets": [{ "name": "KARA KARA", "id": "kara-kara" }]
+  },
+  "taiwan": {
+    "name": "Taiwan",
+    "outlets": [{ "name": "KARA KARA", "id": "kara-kara" }]
+  },
+  "japan": {
+    "name": "Japan",
+    "outlets": [{ "name": "KARA KARA", "id": "kara-kara" }]
+  },
+  "thailand": {
+    "name": "Thailand",
+    "outlets": [{ "name": "VSING Thailand", "id": "vsing-thailand" }]
+  }
+}

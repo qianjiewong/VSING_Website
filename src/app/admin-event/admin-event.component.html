@@ -1,0 +1,84 @@
+<div class="admin-event">
+  <h1 class="page-title">Admin Event Editor</h1>
+
+  <div class="editor-card">
+    <div classs="events-section">
+      <h2 class="section-title">Events</h2>
+      <div class="event-list">
+        <div class="event-item" *ngFor="let event of eventData; let i = index">
+          <div class="event-header" (click)="toggleEvent(i)">
+            <div class="event-info">
+              <span class="event-number">Event {{ i + 1 }}</span>
+              <span class="event-title-preview">{{ event.title || 'EVENT TITLE'}}</span>
+            </div>
+            <div class="expand-icon" [class.expanded]="event.isExpanded">
+              <svg width="16" height="16" viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6, 9, 12, 15 18, 9"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="event-form" [class.expanded]="event.isExpanded">
+            <div class="form-grid">
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Event Title</label>
+                  <input
+                    type="text"
+                    [(ngModel)]="event.title"
+                    name="title{{i}}"
+                    placeholder="Enter event title"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Image URL</label>
+                  <input
+                    type="text"
+                    [(ngModel)]="event.image"
+                    name="image{{i}}"
+                    placeholder="Enter image URL"
+                    class="form-input"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <label class="form-label">Description</label>
+                  <textarea
+                    [(ngModel)]="event.description"
+                    name="description{{i}}"
+                    placeholder="Enter event description"
+                    class="form-textarea"
+                    rows="4"
+                    >
+                  </textarea>
+                </div>
+              </div>
+
+              <div class="save-and-delete">
+                <button class="delete-btn" (click)="deleteEvent(event.id)">
+                  Delete Event
+                </button>
+
+                <button class="save-btn" (click)="save()" [class.loading]="isLoading">
+                  <span class="btn-text">Save Changes</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button class="add-event-btn" (click)="addEvent()">
+        + Add New Event
+      </button>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,231 @@
+<main class="home-page"> 
+  <div class="hero-section"> 
+    <div class="hero-content"> 
+      <!-- <h2 class="home-heading">VSING Interactive Concert Bar</h2>  -->
+      <h2>A Multiplayer Vocal Sport Arena</h2> 
+      <p class="home-paragraph">Features a massive stage designed for everyone to showcase their talent!</p> 
+      <div class="view-ar-button" (click)="showARPanel()">
+        <img src="assets/images/AR-icon.png" alt="AR Icon" class="icon"/>
+        <span>View VSING In AR</span>
+      </div>
+    </div> 
+  </div>
+
+
+  <!-- AR Modal Overlay -->
+   <div class="ar-overlay" [class.visible]="isARPanelVisible" (click)="hideARPanel()">
+    <div class="ar-panel" (click)="$event.stopPropagation()">
+      
+      <button class="close-button" (click)="hideARPanel()">x</button>
+
+      <a-scene embedded style="width: 100%; height: 400px;">
+        <a-assets timeout="10000">
+          <video
+            id="video360"
+            src="assets/video/sample-360.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            webkit-playsinline
+            crossorigin="anonymous"
+            preload="auto">
+          </video>
+        </a-assets>
+
+        <a-videosphere src="#video360" rotation="180 0 0"></a-videosphere>
+        <a-entity camera look-controls position="0 1.6 0"></a-entity>
+      </a-scene>
+
+    </div>
+  </div>
+
+
+
+
+
+  <div class="discover-section">
+    <h2 class="section-title">DISCOVER MORE</h2>
+
+    <div class="card-scroll-wrapper" id="cardScrollWrapper">
+      <div class="card-scroll-track" id="cardTrack">
+        <a *ngFor="let event of events" [routerLink]="['/event', event.id]" class="card-category">
+          <div class="card">
+            <img [src]="event.image" [alt]="event.shortTitle">
+          </div>
+          <p class="card-title">{{ event.shortTitle }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="how-vsing-works">
+    <h2 class="section-title">HOW VSING WORKS</h2>
+      <div class="work-row">
+        <div class="video-container">
+          <iframe 
+            width="700" 
+            height="400" 
+            src="https://www.youtube.com/embed/A89gZ42BmSw?autoplay=1&mute=1&loop=1&playlist=A89gZ42BmSw&controls=0&showinfo=0&rel=0&modestbranding=1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+            >
+          </iframe>
+        </div>
+        <div class="text-content">
+          <h3>LARGE SCREEN AND CONCERT LEVEL STAGE <br/> EFFECTS</h3>
+          <P>
+            Fulfill your dream becoming a singer.<br/>
+            Impress everyone by showing your signing talent to create a concert atmosphere.
+          </P>
+        </div>
+      </div>
+
+       <div class="work-row">
+        <div class="video-container">
+          <iframe 
+            width="700" 
+            height="400" 
+            src="https://www.youtube.com/embed/Z6AJTQo2_Y8?autoplay=1&mute=1&loop=1&playlist=Z6AJTQo2_Y8&controls=0&showinfo=0&rel=0&modestbranding=1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <div class="text-content">
+          <h3>AUDIENCE CAN ALSO SWIPE GIFTS TO THE  <br/> PERFORMER ON STAGE THROUGH VSING APP</h3>
+          <P>
+            Trigger the dazzling effects to become the spotlight.<br/>
+            Get Closer with the performer on stage by using the most high-profile way.
+          </P>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="gift-section">
+    <h2 class="section-title">EXCLUSIVE GIFTS & LUCKYDRAW</h2>
+    
+    <div class="gift-content">
+      <div class="v-points-display">
+        <img src="/assets/images/gift1.png" alt="v-points" />
+      </div>
+      <div class="gifts-display">
+        <h3>GIFTS RECEIVED DURING PERFORMING WILL BE <br/> CONVERTED INTO POINTS</h3>
+        <img src="/assets/images/gift2.png" alt="gifts" />
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="app-section">
+  <h2 class="section-title">VSING MOBILE APP</h2>
+  <div class="app-content">
+    <h3 class="app-title">VSING MOBILE APP</h3>
+    <p class="app-subtitle">Let You Control The Atmosphere</p>
+    
+    <div class="app-phones">
+      <div class="phone-block side-phone">
+        <div class="phone-mockup">
+          <img src="/assets/images/app_UI_1.png" alt="VSING Mobile App Screen 1" />
+        </div>
+        <p class="phone-caption">Send virtual gifts to unlock exclusive effects and interact with performers in real time with no distance, just pure connection.</p>
+      </div>
+      <div class="phone-block lowered">
+        <div class="phone-mockup">
+          <img src="/assets/images/app_UI_3.png" alt="VSING Mobile App Screen 2" />
+        </div>
+        <p class="phone-caption">Give rewards to unlock the screen and stage effects. Interact with everyone at zero distance</p>
+      </div>
+      <div class="phone-block side-phone">
+        <div class="phone-mockup">
+          <img src="/assets/images/app_UI_2.png" alt="VSING Mobile App Screen 3" />
+        </div>
+        <p class="phone-caption">Choose the live performing genre through Apps. Show your talent on stage or down the stage</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="store-section">
+  <h2 class="section-title">YOUR SELECTED STORES</h2>
+  
+  <div class="region-box">
+    <div class="region-title">Asia Pacific</div>
+
+    <div class="region-columns">
+      <div class="region-column" *ngFor="let region of groupedOutlets">
+        <h4 class="region-name">{{ region.name }}</h4>
+        <div class="outlet-list">
+          <button 
+            *ngFor="let outlet of region.outlets.slice(0, 5)" 
+            class="outlet-button"
+            (click)="goToOutlet(region.code, outlet.id)">
+            {{ outlet.name }}
+          </button>
+          <button
+            *ngIf = "region.outlets.length > 5"
+            class = "view-more-button"
+            (click) = "goToOutlet(region.code, '')">
+           View More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+    <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1ZwYuERMXpqoKMUTfIxq1Hz5Logk1Wsc&ehbc=2E312F" width="640" height="480"></iframe> -->
+    
+    <!-- <div class="store-card" *ngFor="let outlet of outlets">
+      <div class="store-content">
+        <div class="store-left">
+          <h3 class="store-name">{{ outlet.name }}</h3>
+          <button class="store-toggle" (click)="toggleStoreInfo(outlet)">
+            <span class="toggle-text">{{ outlet.expanded ? 'Hide store information' : 'Show store information' }}</span>
+            <span class="toggle-icon">{{ outlet.expanded ? '−' : '+' }}</span>
+          </button>
+        </div>
+        
+        <div class="store-right" [class.expanded]="outlet.expanded">
+          <div class="store-info">
+            <div class="info-section">
+              <h4>HOURS OF OPERATION</h4>
+              <div class="info-row">
+                <span class="info-label">{{ outlet.hours }}</span>
+                <span class="info-value">{{ outlet.time }}</span>
+              </div>
+            </div>
+            
+            <div class="info-section">
+              <h4>CONTACT</h4>
+              <div class="info-row">
+                <span class="info-label">Phone</span>
+                <span class="info-value">{{ outlet.phone }}</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Address</span>
+                <span class="info-value">{{ outlet.address }}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="store-map">
+            <iframe
+              [src]="sanitizer.bypassSecurityTrustResourceUrl(outlet.mapUrl)"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div> -->

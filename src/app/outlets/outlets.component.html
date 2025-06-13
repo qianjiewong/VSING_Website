@@ -1,0 +1,69 @@
+<div class="outlet-hero">
+  <img src="/assets/images/location_background.png" alt="VSING Location" />
+  <div class="hero-overlay-content">
+    <div class="hero-subtitle">
+      <h3>HOURS AND LOCATION</h3>
+    </div>
+    <h2>{{ countryName }}</h2>
+    <button class="book-btn" (click)="scrollToOutlet()">Book Now</button>  
+  </div>
+</div>
+
+<div class="outlets-wrapper" id="outlet-section">
+
+  <div *ngFor="let outlet of outlets; index as i" class="outlet-section" [attr.id]="outlet.id">
+    
+      <div class="outlet-title">
+        <span>{{ i + 1 }}</span>
+        <div>
+          <h3>{{ outlet.name }}</h3>
+          <a>{{ outlet.address }}</a>
+        </div>
+      </div>
+
+      <div class="outlet-main">
+        <img [src]="outlet.image" class="main-image"/>
+        <iframe
+          [src]="sanitizer.bypassSecurityTrustResourceUrl(outlet.mapUrl)"
+          class="map-embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="outlet-description">
+        <div class="main-content">
+            <p *ngFor="let p of outlet.description">{{ p }}</p>
+          </div>
+
+        <div class="side-info">
+          <div>
+            <h4>PHONE NUMBER</h4>
+            <p>
+              <span class="material-icons phone-icon">phone</span>
+              {{ outlet.phone }}
+            </p>
+          </div>
+          <div>
+            <h4>HOURS OF OPERATION</h4>
+             <div class="hours-list">
+              <div class="hours-row" *ngFor="let day of outlet.hours">
+                <span class="day">{{ day.day }}</span>
+                <span class="time">{{ day.time }}</span>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      
+      <button class="book-btn">Book Now</button>
+      <!-- <div class="gallery">
+        <img *ngFor="let img of outlet.gallery" [src]="img" />
+      </div> -->
+      <div class="outlet-divider"></div>
+    
+    
+  </div>
+
+</div>

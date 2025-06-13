@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #09091C;
+  color: white;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* body {
+  font-family: 'Instrument Sans', sans-serif;
+  background-color: #121212;
+  color: white;
+} */
+

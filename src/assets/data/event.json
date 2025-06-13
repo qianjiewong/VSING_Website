@@ -1,0 +1,72 @@
+[
+  {
+    "id": "event-1",
+    "shortTitle": "Event 1",
+    "title": "New Feature is Coming",
+    "image": "/assets/images/demo_details.png",
+    "description": "Experience an electrifying karaoke battle night where vocal talent, fun games, and crowd cheers collide in one thrilling event. Join our retro night party featuring old-school hits, disco vibes, and unforgettable moments with friends new and old alike.Step into the spotlight for a talent showcase event filled with music, magic, and creative surprises to entertain all guests."
+  },
+  {
+    "id": "event-2",
+    "shortTitle": "Event 2",
+    "title": "Event 2",
+    "image": "/assets/images/demo_details2.png",
+    "description": "Join our retro night party featuring old-school hits, disco vibes, and unforgettable moments with friends new and old alike."
+  },
+  {
+    "id": "event-3",
+    "shortTitle": "Event 3",
+    "title": "Event 3",
+    "image": "/assets/images/demo_details.png",
+    "description": "Step into the spotlight for a talent showcase event filled with music, magic, and creative surprises to entertain all guests."
+  },
+  {
+    "id": "event-4",
+    "shortTitle": "Event 4",
+    "title": "Event 4",
+    "image": "/assets/images/demo_details.png",
+    "description": "Celebrate cultural fusion with live DJs, traditional performances, and themed drinks in an unforgettable music lounge celebration."
+  },
+  {
+    "id": "event-5",
+    "shortTitle": "Event 5",
+    "title": "Event 5",
+    "image": "/assets/images/demo_details.png",
+    "description": "Dance through decades with themed rooms, nostalgic music, and immersive decorations spanning the 80s, 90s, and early 2000s."
+  },
+  {
+    "id": "event-6",
+    "shortTitle": "Event 6",
+    "title": "Event 6",
+    "image": "/assets/images/demo_details.png",
+    "description": "A night of luxury karaoke and gourmet experiences featuring premium booths, personalized service, and elite entertainment packages."
+  },
+  {
+    "id": "event-7",
+    "shortTitle": "Event 7",
+    "title": "Event 7",
+    "image": "/assets/images/demo_details.png",
+    "description": "Sing for a cause in this charity concert night where every note and every guest helps fund local creative community programs."
+  },
+  {
+    "id": "event-8",
+    "shortTitle": "Event 8",
+    "title": "Event 8",
+    "image": "/assets/images/demo_details.png",
+    "description": "Get ready for an epic cosplay karaoke party with prizes, themed cocktails, and performances straight out of your favorite anime."
+  },
+  {
+    "id": "event-9",
+    "shortTitle": "Event 9",
+    "title": "Event 9",
+    "image": "/assets/images/demo_details.png",
+    "description": "Test your knowledge and vocals in our trivia and karaoke fusion event, perfect for music lovers and quiz fans alike."
+  },
+  {
+    "id": "event-10",
+    "shortTitle": "Event 10",
+    "title": "Event 10",
+    "image": "/assets/images/demo_details.png",
+    "description": "Test your knowledge and vocals in our trivia and karaoke fusion event, perfect for music lovers and quiz fans alike."
+  }
+]
