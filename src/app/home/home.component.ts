@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
+import { CUSTOM_ELEMENTS_SCHEMA, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -350,22 +351,11 @@ export class HomeComponent {
   showARPanel() {
     this.isARPanelVisible = true;
     document.body.style.overflow = 'hidden';
-    setTimeout(() => {
-      const video = this.arVideoRef?.nativeElement;
-      if (video) {
-        video.play().catch(err => console.warn('Autoplay blocked', err));
-      }
-    }, 300);
   }
 
   hideARPanel() {
-    const video = this.arVideoRef?.nativeElement;
-    if (video) {
-      video.pause();
-      video.currentTime = 0;
-    }
-    document.body.style.overflow = '';
     this.isARPanelVisible = false;
+    document.body.style.overflow = '';
   }
 
   toggleStoreInfo(outlet: any): void {

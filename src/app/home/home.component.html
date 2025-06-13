@@ -4,16 +4,15 @@
       <!-- <h2 class="home-heading">VSING Interactive Concert Bar</h2>  -->
       <h2>A Multiplayer Vocal Sport Arena</h2> 
       <p class="home-paragraph">Features a massive stage designed for everyone to showcase their talent!</p> 
-      <div class="view-ar-button" (click)="showARPanel()">
+      <div class="view-ar-button" [routerLink]="navToAR()">
         <img src="assets/images/AR-icon.png" alt="AR Icon" class="icon"/>
         <span>View VSING In AR</span>
       </div>
     </div> 
   </div>
 
-
   <!-- AR Modal Overlay -->
-   <div class="ar-overlay" [class.visible]="isARPanelVisible" (click)="hideARPanel()">
+   <!-- <div class="ar-overlay" [class.visible]="isARPanelVisible" (click)="hideARPanel()">
     <div class="ar-panel" (click)="$event.stopPropagation()">
       
       <button class="close-button" (click)="hideARPanel()">x</button>
@@ -38,10 +37,7 @@
       </a-scene>
 
     </div>
-  </div>
-
-
-
+  </div> -->
 
 
   <div class="discover-section">
